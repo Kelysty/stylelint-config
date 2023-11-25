@@ -1,0 +1,63 @@
+{
+  "name": "@kelysty/stylelint-config",
+  "version": "1.0.0",
+  "description": "Kelysty UI Stylelint configuration",
+  "license": "MIT",
+  "author": "Kelysty",
+  "contributors": [
+    "Ivan Postarnak"
+  ],
+  "keywords": [
+    "stylelint",
+    "config"
+  ],
+  "main": "index.js",
+  "files": [
+    "prettier.js",
+    "order.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kelysty/stylelint-config.git.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kelysty/stylelint-config.git.git/issues"
+  },
+  "homepage": "https://github.com/Kelysty/stylelint-config.git.git#readme",
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "yarn run lint:styles && yarn run lint:other",
+    "lint:styles": "stylelint '**/*.{css,scss}' --report-needless-disables",
+    "lint:other": "yarn run prettier -- --check",
+    "prettier": "prettier '**/*.{js,md,yaml,yml,json}' --config .prettierrc.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "postcss-scss": "^4.0.9",
+    "stylelint-order": "^6.0.3",
+    "stylelint-prettier": "^4.1.0",
+    "stylelint-scss": "^5.3.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "@kelysty/prettier-config": "^1.0.0",
+    "husky": "^8.0.3",
+    "nano-staged": "^0.8.0",
+    "prettier": "^3.1.0",
+    "stylelint": "^15.11.0"
+  },
+  "peerDependencies": {
+    "postcss": ">=8.4.0",
+    "prettier": ">=3.1.0",
+    "stylelint": ">=15.10.0"
+  },
+  "nano-staged": {
+    "*.{css,scss}": [
+      "stylelint --fix --quiet --report-needless-disables"
+    ],
+    "*.{js,md,yaml,yml,json}": [
+      "prettier --write"
+    ]
+  }
+}
