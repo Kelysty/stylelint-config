@@ -18,38 +18,30 @@ yarn add --dev stylelint postcss @kelysty/stylelint-config
 
 Add `.stylelintrc.js` file in the project root with the following content:
 
-```json
-{
-  "extends": [
-    "@kelysty/stylelint-config"
-  ]
-}
+```js
+module.exports = {
+  extends: ['@kelysty/stylelint-config'],
+};
 ```
 
 ### Prettier
 
 If you are using Prettier, extend root config with the additional rules:
 
-```json
-{
-  "extends": [
-    "@kelysty/stylelint-config",
-    "@kelysty/stylelint-config/prettier"
-  ]
-}
+```js
+module.exports = {
+  extends: ['@kelysty/stylelint-config', '@kelysty/stylelint-config/prettier'],
+};
 ```
 
 ### Order
 
 If you want to order properties in your css files, extend root config with the additional rules:
 
-```json
-{
-  "extends": [
-    "@kelysty/stylelint-config",
-    "@kelysty/stylelint-config/order"
-  ]
-}
+```js
+module.exports = {
+  extends: ['@kelysty/stylelint-config', '@kelysty/stylelint-config/order'],
+};
 ```
 
 ### Scripts
