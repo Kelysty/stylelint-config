@@ -1,6 +1,6 @@
 {
   "name": "@kelysty/stylelint-config",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Kelysty UI Stylelint configuration",
   "license": "MIT",
   "author": "Kelysty",
@@ -48,9 +48,9 @@
     "stylelint": "^15.11.0"
   },
   "peerDependencies": {
-    "postcss": ">=8.4.0",
-    "prettier": ">=3.1.0",
-    "stylelint": ">=15.10.0"
+    "postcss": "^8.4.0",
+    "prettier": "^3.1.0",
+    "stylelint": "^15.10.0"
   },
   "nano-staged": {
     "*.{css,scss}": [
